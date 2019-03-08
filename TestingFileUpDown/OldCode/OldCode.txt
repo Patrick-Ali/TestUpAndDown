@@ -1,0 +1,24 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace TestingFileUpDown.OldCode
+{
+    public class OldCode
+    {
+    }
+}
+
+        // NOT NEEDED 
+        public async Task<ActionResult> Downloads()
+        {
+            System.IO.FileInfo[] fileNames = new System.IO.DirectoryInfo(@"C:\Users\patri\Documents\").GetFiles();
+            List<string> items = new List<String>();
+            foreach (var file in fileNames) {
+                items.Add(file.Name);
+            }
+            return View(items);
+        }
+
+		<!--@Html.ActionLink("Documents", "Downloads")-->
